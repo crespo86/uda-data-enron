@@ -22,7 +22,7 @@ The dataset have 21 features (incloud ‘poi’) and 146 people incloud 18 POIs.
 | salary    |     35% |  expenses    |     35% |  
 | from_this_person_to_poi    |     41% |  from_messages    |     41% |
 | to_messages    |     41% |  long_term_incentive    |     55% |
-| shared_receipt_with_poi    |     41% |
+| shared_receipt_with_poi    |     41% |||
 
 
 'email_address' is not number and I will identify 'poi', so
