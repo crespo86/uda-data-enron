@@ -10,19 +10,19 @@ The dataset have 21 features (incloud ‘poi’) and 146 people incloud 18 POIs.
 
 ### features list
 
-| features   | have missed value | features   | have missed value|
+| features   | missed value rate | features   | missed value rate |
 |:-----------|------------:|:-----------|------------:|
-| deferred_income       |        have |total_stock_value    |     have |
-| restricted_stock     |      have |director_fees    |     have |
-| total_payments       |        have |  other    |     have |
-| loan_advances       |       have |   from_poi_to_this_person    |     have |
-| email_address    |     have |  restricted_stock_deferred    |     have |
-| bonus    |     have |  exercised_stock_options    |     have |  
-| poi    |     haven't |  deferral_payments    |     have |
-| salary    |     have |  expenses    |     have |  
-| from_this_person_to_poi    |     have |  from_messages    |     have |
-| to_messages    |     have |  long_term_incentive    |     have |
-| shared_receipt_with_poi    |     have |
+| deferred_income       |        65% |total_stock_value    |     14% |
+| restricted_stock     |      25% |director_fees    |     88% |
+| total_payments       |        14% |  other    |     36% |
+| loan_advances       |       97% |   from_poi_to_this_person    |     41% |
+| email_address    |     24$ |  restricted_stock_deferred    |     88% |
+| bonus    |     44% |  exercised_stock_options    |     30% |  
+| poi    |     0% |  deferral_payments    |     73% |
+| salary    |     35% |  expenses    |     35% |  
+| from_this_person_to_poi    |     41% |  from_messages    |     41% |
+| to_messages    |     41% |  long_term_incentive    |     55% |
+| shared_receipt_with_poi    |     41% |
 
 
 'email_address' is not number and I will identify 'poi', so
