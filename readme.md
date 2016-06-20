@@ -222,6 +222,9 @@ In **SVC, DecisionTree, K-neighbors**, I used scaled data and normal data both a
 ## SVC
 
 This is my code
+- rbf kernel: I wanted to use non-linear kernel
+- C: I wanted to get nore accuracy
+- gamma: I used rbf so I wanted to find appropriate coefficient of this kernel
 
 ``` python
 svc = SVC(kernel = 'rbf', class_weight = 'balanced')
@@ -257,6 +260,7 @@ This score used normal data (scaled data get precision 0.18, recall 0.4)
 ## DecisionTree
 
 This is my code
+- critertion : gini and entropy are the ways to check impurity. 
 
 ``` python
 tree = tree.DecisionTreeClassifier()
