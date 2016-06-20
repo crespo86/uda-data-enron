@@ -366,6 +366,12 @@ GaussianNB score
 
 ## Selected algorithm
 
+Goal of this project is identify 'POI's and the data have a lot of non-poi and just a few pois.
+So, I concentrate more about 'identifying 'poi' than 'identifying non-poi'.
+When I get parameter, which means **gridsearchCV**, I was looking for highest recall model and choose a best algolithm, which have highest recall and approprate precision of 'POI's
+
+I used GaussianNB to identify 'poi' and I think I got a good recall and f1 score.
+
 I select GaussianNB. The score using tester.py is this.
 
 the model
@@ -388,14 +394,15 @@ Pipeline(steps=[('pca', RandomizedPCA(copy=True, iterated_power=3, n_components=
 |False negatives| 1140	|
 |True negatives| 11089|
 
-## Review
+I used tester.py.
+The Recall score is 0.43 which is approprate and the precision is also 0.485 which is fitted.
+This tester code predict 14,000 data(have 2000 poi) and got 860 True positives which are identify POI nicely. and 911 False positives which are failed to identify POI. and Two negative set(which are identifi non-pois).  
 
-I used GaussianNB to identify 'poi' and I think I got a good recall and f1 score.
+## Review
 
 In this project, I get some information about the data.
 
-First, to identify 'POI', the most features are bonus, and defered_income. Now I knew the information by getting score. However, I will figure
-the relationship between those features and 'poi' in finantional ways.
+First, to identify 'POI', the most features are bonus, and defered_income. Now I knew the information by getting score. However, I will figure the relationship between those features and 'poi' in finantional ways.
 
 Second, my new feature works. It is the funnest thing in this project. To be a good data analyst, I think I have to study other social knowledge broadly.
 If I had more knowledge about finance, maybe I can make nice inspire more.
