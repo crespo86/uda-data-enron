@@ -304,31 +304,29 @@ This is my code
 - algorithm: This is the way to compute nearest neighbors. I wanted to choose better ways.
 - n_neighbors: It is number of neighbors. If I make this high, It can reduce noise but the accuracy is also low.
 - leaf_size: It affect the speed of query. and It can be deside by count of n_point. So I make this parameter a lot to fit n_point.
-- 
+- I used MinMaxscale in this algolithm to optimized the result.
 
 ``` python
 knn = KNeighborsClassifier()
 algorithm= ['auto', 'ball_tree', 'kd_tree', 'brute']
 n_neighbors= [1,3,5,7,9,11,13,15,17,19]
 leaf_size= [5,10,20,30,40,50,60]
-weights= ['distance', 'uniform']
-pipe = Pipeline(steps=[('pca', pca), ('knn', knn)])
+pipe = Pipeline(steps=[('scaling', MinMaxScaler()),('pca', pca), ('knn', knn)])
 
 clf = GridSearchCV(pipe,
                    dict(knn__algorithm=algorithm,
                         knn__n_neighbors=n_neighbors,
-                        knn__leaf_size=leaf_size,
-                        knn__weights=weights), scoring = 'recall')
+                        knn__leaf_size=leaf_size), scoring = 'recall')
 
 clf = clf.fit(features_train, labels_train)
 ```
-This is my best estimator: algorithm = 'auto', n_neighbors = 1, leaf_size = 5, p = 1, weights = 'distance'
+This is my best estimator: algorithm = 'auto', n_neighbors = 1, leaf_size = 5'
 
 ```
-Pipeline(steps=[('pca', RandomizedPCA(copy=True, iterated_power=3, n_components=8, random_state=42,
+Pipeline(steps=[('scaling', MinMaxScaler(copy=True, feature_range=(0, 1))), ('pca', RandomizedPCA(copy=True, iterated_power=3, n_components=8, random_state=42,
        whiten=True)), ('knn', KNeighborsClassifier(algorithm='auto', leaf_size=5, metric='minkowski',
-           metric_params=None, n_jobs=1, n_neighbors=1, p=1,
-           weights='distance'))])
+           metric_params=None, n_jobs=1, n_neighbors=1, p=2,
+           weights='uniform'))])
 ```
 K-neighbors score
 
@@ -336,10 +334,10 @@ This score used scaled data
 
 || precision   | recall  | f1-score   | support |
 |:--|-----------:|------------:|-----------:|------------:|
-|nopoi| 0.92       |        0.97 |0.95    |     37 |
-|poi| 0.67      |        0.40 |0.50    |     5 |
-|avg / total| 0.89       |        0.90 |0.89    |     42 |
-
+|nopoi| 0.92       |        0.95 |0.93    |     37 |
+|poi| 0.50      |        0.40 |0.44    |     5 |
+|avg / total| 0.87       |        0.88 |0.88    |     42 |
+`
 ## GaussianNB
 
 This is my code
