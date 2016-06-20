@@ -262,7 +262,7 @@ This score used normal data (scaled data get precision 0.18, recall 0.4)
 This is my code
 - critertion : gini and entropy are the ways to check impurity. I just check better way.
 - splitter: this is the way to split. default is best. I want to choose better way.
-- min_sample_split: It desice volume of each split. If this score is high, algolithm's accuracy can be rough.
+- min_sample_split: It desice volume of each split. If this score is high, algolithm's accuracy can be rough. I want to get approprate ni_sample_split to avoid overfit and nonfit.
 
 ``` python
 tree = tree.DecisionTreeClassifier()
@@ -301,13 +301,16 @@ This score used normal data (scaled data get precision 0.25, recall 0.4)
 ## K-neighbors
 
 This is my code
+- algorithm: This is the way to compute nearest neighbors. I wanted to choose better ways.
+- n_neighbors: It is number of neighbors. If I make this high, It can reduce noise but the accuracy is also low.
+- leaf_size: It affect the speed of query. and It can be deside by count of n_point. So I make this parameter a lot to fit n_point.
+- 
 
 ``` python
 knn = KNeighborsClassifier()
 algorithm= ['auto', 'ball_tree', 'kd_tree', 'brute']
 n_neighbors= [1,3,5,7,9,11,13,15,17,19]
 leaf_size= [5,10,20,30,40,50,60]
-p= [1,2]
 weights= ['distance', 'uniform']
 pipe = Pipeline(steps=[('pca', pca), ('knn', knn)])
 
@@ -315,7 +318,6 @@ clf = GridSearchCV(pipe,
                    dict(knn__algorithm=algorithm,
                         knn__n_neighbors=n_neighbors,
                         knn__leaf_size=leaf_size,
-                        knn__p=p,
                         knn__weights=weights), scoring = 'recall')
 
 clf = clf.fit(features_train, labels_train)
