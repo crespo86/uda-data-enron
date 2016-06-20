@@ -111,6 +111,11 @@ for a in data_dict:
 to check the effectiveness of features, I used Validation Set and
 **DecisionTreeClassifier**
 - the data is small, I used **StratifiedShuffleSplit** which is shuffled k-fold.
+- StratifiedShuffleSplit is one of cross validation iterator method. 
+- First, the data is so small I had to choose shuffled validation set then k-fold.
+- second, I had to choose one between StratifiedKFold and StratifiedShuffleSplit.
+- third, the data is unbalanced and It can have some overlaped data. so I choose StratifiedShuffleSplit.
+- (StratifiedShuffleSplit is merge of StratifiedKFold and ShuffleSplit.)
 
 Here is the validation code
 
