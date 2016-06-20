@@ -260,7 +260,9 @@ This score used normal data (scaled data get precision 0.18, recall 0.4)
 ## DecisionTree
 
 This is my code
-- critertion : gini and entropy are the ways to check impurity. 
+- critertion : gini and entropy are the ways to check impurity. I just check better way.
+- splitter: this is the way to split. default is best. I want to choose better way.
+- min_sample_split: It desice volume of each split. If this score is high, algolithm's accuracy can be rough.
 
 ``` python
 tree = tree.DecisionTreeClassifier()
