@@ -112,8 +112,8 @@ To check the effectiveness of features, I used Validation Set and
 **DecisionTreeClassifier**
 
 The reason Using validation set is avoid overfitting. If I fit whole data(features, labels) then the algorithm can match all features to all labels one by one. IT means, It can be more than find pattern just memorized.
-
 Using validation set, I can split data to various data, so I can **test** the pattern.
+Dividing train and test set is also important. Large train set make overfit, and small train set cannot pridict nicely. Also if a data is ordered by a features, shuffle is import bacause in this data, data of train set and test sen can be totally different.
 
 - the data is small, I used **StratifiedShuffleSplit** which is shuffled k-fold.
 - StratifiedShuffleSplit is one of cross validation iterator method. 
@@ -406,7 +406,6 @@ Pipeline(steps=[('pca', RandomizedPCA(copy=True, iterated_power=3, n_components=
 |False negatives| 1140	|
 |True negatives| 11089|
 
-I used tester.py.
 The Recall score is 0.43 which is approprate and the precision is also 0.485 which is fitted.
 This tester code predict 14,000 data(have 2000 poi) and got 860 True positives which are identify POI nicely. and 911 False positives which are failed to identify POI. and Two negative set(which are identifi non-pois).  
 
