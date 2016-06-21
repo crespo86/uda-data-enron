@@ -407,7 +407,9 @@ Pipeline(steps=[('pca', RandomizedPCA(copy=True, iterated_power=3, n_components=
 |True negatives| 11089|
 
 The Recall score is 0.43 which is approprate and the precision is also 0.485 which is fitted.
-This tester code predict 14,000 data(have 2000 poi) and got 860 True positives which are identify POI nicely. and 911 False positives which are failed to identify POI. and Two negative set(which are identifi non-pois).  
+
+This tester code predict 14,000 data(have 2000 poi) and got 860 True positives which are identify POI nicely. and 911 False positives which are failed to identify POI. So, the Precision score of POI is 860/(860 + 911) = 0.485 and the Recall socre of POI is 860/(860 + 1140) = 0.43.
+Which means, In 2000 POI and 12000 Non-POI, my model identify 1771 POIs but In the 1771 POIs, 860 POIs are correct and identify 12229 non-pois but just 11098 non-pois are correct.
 
 ## Review
 
