@@ -217,6 +217,13 @@ According to the table, I used 8 components of the data
 
 # Run algorithm
 
+Choosing algorithm is a finding a tool to use and set parameter is set how to use the tool.
+We can get more accuracy to optimize the parameters of each algorithm.
+
+For example, If I want to SVC algorithm, I can use perfect linear kernal or RBF kernel. What kernal I use is depend on the data. Every data have their own optimazed parameters.
+
+So I will choose algorithm and parameter both here.
+
 Using Selected features and PCA, I run some algorithms.
 I used **SVC, DecisionTree, K-neighbors, GaussianNB **
 
