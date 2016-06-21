@@ -108,8 +108,13 @@ for a in data_dict:
 
 ## Find Important Features
 
-to check the effectiveness of features, I used Validation Set and
+To check the effectiveness of features, I used Validation Set and
 **DecisionTreeClassifier**
+
+The reason Using validation set is avoid overfitting. If I fit whole data(features, labels) then the algorithm can match all features to all labels one by one. IT means, It can be more than find pattern just memorized.
+
+Using validation set, I can split data to various data, so I can **test** the pattern.
+
 - the data is small, I used **StratifiedShuffleSplit** which is shuffled k-fold.
 - StratifiedShuffleSplit is one of cross validation iterator method. 
 - First, the data is so small I had to choose shuffled validation set then k-fold.
